@@ -65,7 +65,7 @@ CHIP ALU {
     Or8Way(in=outSecondHalf,out=outOrSecondHalf);
     Or(a=outOrFirstHalf, b=outOrSecondHalf, out=outCombinedOr);
     
-    Mux(a=true, b=false, sel=outCombinedOr, out=zr);
+    Not(in=outCombinedOr, out=zr);
 
     // set ng pin output
     Mux(a=false, b=true, sel=outMSB, out=ng);
